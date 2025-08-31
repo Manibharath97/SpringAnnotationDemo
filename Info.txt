@@ -3,3 +3,4 @@ Code written from CodeSnippet Tutorials (Youtube)
 1. Added @Controller, @RequestMapping and @ResponseBody in controller class
 2. Used @RequestMapping for get, post, put, delete in controller class
 3. Used @get, @post, @put, @delete, @requestparam, @PathVariable, @RequestBody in controller class
+4. Added service and repository layer in the application
