@@ -1,3 +1,4 @@
 Code written from CodeSnippet Tutorials (Youtube)
 
 1. Added @Controller, @RequestMapping and @ResponseBody in controller class
+2. Used @RequestMapping for get, post, put, delete in controller class
