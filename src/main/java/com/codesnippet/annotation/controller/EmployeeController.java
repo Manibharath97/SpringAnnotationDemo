@@ -1,5 +1,6 @@
 package com.codesnippet.annotation.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,13 +11,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.codesnippet.annotation.entity.Employee;
+import com.codesnippet.annotation.service.EmployeeService;
 
 @RestController
 public class EmployeeController {
 	
+	@Autowired
+	EmployeeService employeeService;
+	
 	@GetMapping("/getEmp")
 	public String getEmployee(){
-		return "employee";
+		return employeeService.getEmployee();
 	}
 	
 	@GetMapping("/getEmpByID")
