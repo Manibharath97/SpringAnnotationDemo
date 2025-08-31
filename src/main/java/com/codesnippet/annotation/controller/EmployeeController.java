@@ -1,9 +1,12 @@
 package com.codesnippet.annotation.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.codesnippet.annotation.entity.Employee;
@@ -11,23 +14,32 @@ import com.codesnippet.annotation.entity.Employee;
 @RestController
 public class EmployeeController {
 	
-	@RequestMapping(path = "/getEmp", method = RequestMethod.GET)
-	@ResponseBody
+	@GetMapping("/getEmp")
 	public String getEmployee(){
 		return "employee";
 	}
 	
-	@RequestMapping(path = "/addEmp", method = RequestMethod.POST)
-	public String addEmployee(Employee employee) {
+	@GetMapping("/getEmpByID")
+	public String getEmployeeByID(@RequestParam Integer employeeId) {
+		return "employee";
+	}
+	
+	@GetMapping("/getEmpByPathID/{employeeId}")
+	public String getEmployeeByPathID(@PathVariable Integer employeeId) {
+		return "employee";
+	}
+	
+	@PostMapping("/addEmp")
+	public String addEmployee(@RequestBody Employee employee) {
 		return "Employee is added";
 	}
 	
-	@RequestMapping(path = "/updateEmp", method = RequestMethod.PUT)
+	@PutMapping("/updateEmp")
 	public String updateEmployee(Employee employee) {
 		return "Employee is updated";
 	}
 	
-	@RequestMapping(path = "/deleteEmp", method = RequestMethod.DELETE)
+	@DeleteMapping("/deleteEmp")
 	public String deleteEmployee(Employee employee) {
 		return "Employee is deleted";
 	}
